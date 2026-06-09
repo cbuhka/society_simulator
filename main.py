@@ -81,6 +81,10 @@ def clear_screen():
 
 # --- ИНИЦИАЛИЗАЦИЯ ---
 clear_screen()
+
+#НЕПОСРЕДСТВЕННО ИГРА
+exec(open("mir.py", encoding="utf-8").read())
+
 print("Вы видите свет. Вы только что родились.")
 print("1 - Обычная игра | 2 - Пропустить младенчество | 3 - ДЕБАГ: В ШКОЛУ")
 vybor_rezhima = input("> ")
@@ -137,3 +141,15 @@ exam_correct = 2
 
 # --- ШКОЛА ---
 exec(open("shkol.py", encoding="utf-8").read())
+#ВУЗ
+exec(open("vuz.py", encoding="utf-8").read())
+#работа
+exec(open("rabota.py", encoding="utf-8").read())
+#развлечения
+exec(open("razvlek.py", encoding="utf-8").read())
+#курсы
+exec(open("kursi.py", encoding="utf-8").read())
+#семья
+exec(open("semja.py", encoding="utf-8").read())
+#возраст
+exec(open("vozrast.py", encoding="utf-8").read())
