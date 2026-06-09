@@ -56,8 +56,9 @@ if vybor_rezhima == "2":
     for key in skills: skills[key] = True
 elif vybor_rezhima == "3":
     ticks = TICKS_PER_YEAR
-    for key in skills: skills[key] = True
-stats = {"STR": 5, "AGI": 5, "INT": 5, "VIT": 5, "DEX": 5, "LCK": 5, "SOC": 5}
+    for key in skills:
+        skills[key] = True
+    stats = {"STR": 5, "AGI": 5, "INT": 5, "VIT": 5, "DEX": 5, "LCK": 5, "SOC": 5}
 
 # --- МЛАДЕНЧЕСТВО ---
 while ticks < TICKS_PER_YEAR:
@@ -87,6 +88,7 @@ while ticks < TICKS_PER_YEAR:
 
 # --- ДЕТСКИЙ САД (300 ДНЕЙ) ---
 if skills["hodit"] and vybor_rezhima != "3":
+    age_years = 3
     print("\n=== ВЫ ПОШЛИ В ДЕТСКИЙ САД ===")
     max_ap = 20
     ap = 20
@@ -94,7 +96,7 @@ if skills["hodit"] and vybor_rezhima != "3":
     while day_count <= 300:
         phase = phases[current_phase_index]
 
-        print(f"\n--- ДЕНЬ {day_count} | ФАЗА: {phase} | ОД: {ap}/{max_ap} | СТАТЫ: {stats} ---")
+        print(f"\n--- {age_years} ЛЕТ | ДЕНЬ {day_count} | ФАЗА: {phase} | ОД: {ap}/{max_ap} | СТАТЫ: {stats} ---")
 
         if phase == "Учеба":
             print("1-Учиться(1), 2-Алфавит(3), 3-Безделье(1)")
@@ -168,7 +170,8 @@ if skills["hodit"] and vybor_rezhima != "3":
             ap = max_ap
 
             if day_count % 100 == 0:
-                print(f"\n--- ВАМ ИСПОЛНИЛОСЬ {3 + (day_count // 100)} ЛЕТ! ---")
+                age_years += 1
+                print(f"\n--- ВАМ ИСПОЛНИЛОСЬ {age_years} ЛЕТ! ---")
 
 # --- БОНУСЫ ИЗ ДЕТСТВА ---
 
@@ -187,12 +190,16 @@ stats["SOC"] += counters["rech_try"] // 2
 stats["SOC"] += counters["zvuki"] // 2
 stats["SOC"] += counters["sluh"] // 4
 
+age_years = 6
+school_class = 1
+
 # --- ШКОЛА ---
 print("\n=== ДОБРО ПОЖАЛОВАТЬ В ШКОЛУ! ===")
 for school_years in range(1, 12):
-    print(f"\n--- КЛАСС: {school_years} | СТАТЫ: {stats} ---")
+    print(f"\n--- ВОЗРАСТ: {age_years} | КЛАСС: {school_years} | СТАТЫ: {stats} ---")
     print("1-Усердная учеба(+5 INT), 2-Спорт(+5 STR), 3-Безделье")
     choice = input("> ")
     if choice == "1": stats["INT"] += 5
     elif choice == "2": stats["STR"] += 5
+    age_years += 1
 print("\n!!! ВЫ ВЗРОСЛЫЙ! ШКОЛА ОКОНЧЕНА.")
