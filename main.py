@@ -100,10 +100,10 @@ elif vybor_rezhima == "3":
     stats = {"STR": 5, "AGI": 5, "INT": 5, "VIT": 5, "DEX": 5, "LCK": 5, "SOC": 5}
 
 # --- МЛАДЕНЧЕСТВО ---
-exec(open("mlad.py", encoding="utf-8").read())
+exec(open("edu/mlad.py", encoding="utf-8").read())
 
 # --- ДЕТСКИЙ САД ---
-exec(open("sad.py", encoding="utf-8").read())
+exec(open("edu/sad.py", encoding="utf-8").read())
 
 # --- БОНУСЫ ИЗ ДЕТСТВА ---
 
@@ -140,16 +140,16 @@ exam_answers = [
 exam_correct = 2
 
 # --- ШКОЛА ---
-exec(open("shkol.py", encoding="utf-8").read())
+exec(open("edu/shkol.py", encoding="utf-8").read())
 #ВУЗ
-exec(open("vuz.py", encoding="utf-8").read())
+exec(open("edu/vuz.py", encoding="utf-8").read())
 #работа
 exec(open("rabota.py", encoding="utf-8").read())
 #развлечения
 exec(open("razvlek.py", encoding="utf-8").read())
 #курсы
-exec(open("kursi.py", encoding="utf-8").read())
+exec(open("edu/kursi.py", encoding="utf-8").read())
 #семья
-exec(open("semja.py", encoding="utf-8").read())
+exec(open("char/semja.py", encoding="utf-8").read())
 #возраст
-exec(open("vozrast.py", encoding="utf-8").read())
+exec(open("char/vozrast.py", encoding="utf-8").read())
